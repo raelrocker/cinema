@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::resource('api/filmes', 'FilmesController');
 Route::resource('api/salas', 'SalasController');
+Route::resource('api/sessoes', 'SessoesController');
 
 /*
 |--------------------------------------------------------------------------
