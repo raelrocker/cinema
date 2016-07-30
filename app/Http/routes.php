@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('api/filmes', 'FilmesController');
-Route::resource('api/salas', 'SalasController');
-Route::resource('api/sessoes', 'SessoesController');
+Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
+    Route::resource('/filmes', 'FilmesController');
+    Route::resource('/salas', 'SalasController');
+    Route::resource('/sessoes', 'SessoesController');
+});
+
+
 
 /*
 |--------------------------------------------------------------------------
